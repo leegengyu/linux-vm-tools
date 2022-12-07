@@ -40,7 +40,7 @@ apt install -y linux-cloud-tools-virtual${HWE}
 
 # Install compulsory (else cannot install) pre-requisite for XRDP service.
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/i/init-system-helpers/init-system-helpers_1.57_all.deb
-sudo apt install ./init-system-helpers_1.57_all.deb
+apt install ./init-system-helpers_1.57_all.deb
 
 # Install non-compulsory (else our RDP service use case cannot work) pre-requisites for XRDP service.
 apt install -y xserver-xorg-core
@@ -49,7 +49,7 @@ apt install -y xorgxrdp
 
 # Install the xrdp service so we have the auto start behavior.
 wget http://kr.archive.ubuntu.com/ubuntu/pool/universe/x/xrdp/xrdp_0.9.12-1_amd64.deb
-sudo apt install ./xrdp_0.9.12-1_amd64.deb
+apt install ./xrdp_0.9.12-1_amd64.deb
 
 systemctl stop xrdp
 systemctl stop xrdp-sesman
