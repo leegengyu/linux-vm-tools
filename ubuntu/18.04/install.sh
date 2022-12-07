@@ -55,6 +55,8 @@ systemctl stop xrdp
 systemctl stop xrdp-sesman
 
 # Configure the installed XRDP ini files.
+# Allow RDP through vsock (e.g. Hyper-V Enhanced Session) and TCP (e.g. mstsc.exe).
+sed -i_orig -e 's/port=3389/port=vsock:\/\/-1:3389 tcp:\/\/:3389/g' /etc/xrdp/xrdp.ini
 # use vsock transport.
 sed -i_orig -e 's/use_vsock=false/use_vsock=true/g' /etc/xrdp/xrdp.ini
 # use rdp security.
